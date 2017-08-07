@@ -1,0 +1,29 @@
+
+<img src="https://upload.wikimedia.org/wikipedia/commons/thumb/2/2a/Instagram_logo.svg/1200px-Instagram_logo.svg.png" border="0" height="60" width="230" />
+<hr>
+<br>
+<% @posts.each do |x| %>
+    <div class="col-md-4">
+      <div class="thumbnail">
+
+      <%= image_tag x.image.url(:medium) %>
+      <br>
+      <%= x.description %>
+        <br>
+        <div class="buttons" style="margin-top: 10px; margin-bottom: 10px">
+        <%= link_to 'Ver',x, :class => 'btn' %>
+
+
+
+
+
+
+
+    <% if user_signed_in? %>
+        <%= link_to "Editar", edit_post_path(x), :class => 'btn' %>
+        <%= link_to "Borrar", x, method: :delete, confirm: "Quieres borrar la foto?", :class => 'btn' %>
+    <% end %>
+        </div>
+      </div>
+    </div>
+<% end %>

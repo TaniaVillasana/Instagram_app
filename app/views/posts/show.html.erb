@@ -1,0 +1,9 @@
+<h1>Tus Recuerdos</h1>
+<%= image_tag(@post.image.url(:medium)) %>
+<br>
+<%= @post.description %>
+<br>
+<hr>
+<div>
+  <%= link_to "Regresar", root_url, class: "navbar-brand" %>
+</div>
